@@ -8,27 +8,26 @@ def get_response(input)
 =begin
   
   if response = 'quit'
-
+  response.'quit' ? 
 =end  
-
-  response.nil? ? 'sorry?' : response % { c1: $1, c2: $2}
+  response.nil? ? 'bot : sorry?'.red : response % { c1: $1, c2: $2}
 end
 
-RESPONSES = { 'goodbye' => 'bye'.red, 
-              'sayonara' => 'sayonara'.red, 
-              'the weather is (.*)' => 'I hate it when it\'s %{c1}'.red, 
-              'I love (.*)' => 'I love %{c1} too'.red, 
-              'I groove to (.*) and (.*)' => 'I love %{c1} but I hate %{c2}'.red,
-              'I hate (.*)' =>'What\'s wrong with %{c1}?'.red,
-              'Let\'s go to (.*)' =>'I\'m a computer, I can\'t go to %{c1}'.red,
-              'I am (.*)' =>'Nice to meet you %{c1}, I am the chatbot'.red,
-              'Hello' => 'Hi'.red,
-              'Who are you?' => 'The chatbot'.red   
+RESPONSES = { 'goodbye' => 'bot : bye'.red, 
+              'sayonara' => 'bot : sayonara'.red, 
+              'the weather is (.*)' => 'bot : I hate it when it\'s %{c1}'.red, 
+              'I love (.*)' => 'bot : I love %{c1} too'.red, 
+              'I groove to (.*) and (.*)' => 'bot : I love %{c1} but I hate %{c2}'.red,
+              'I hate (.*)' =>'bot : What\'s wrong with %{c1}?'.red,
+              'Let\'s go to (.*)' =>'bot : I\'m a computer, I can\'t go to %{c1}'.red,
+              'I am (.*)' =>'bot : Nice to meet you %{c1}, I am the chatbot'.red,
+              'Hello' => 'bot : Hi'.red,
+              'Who are you?' => 'bot : The chatbot'.red   
             }
 
-puts "Hello, what's your name?"
+puts "bot : Hello, what's your name?".red
 name = gets.chomp
-puts "Hello #{name}".red
+puts "bot : Hello #{name}".red
 while(input = gets.chomp) do
   puts get_response(input)
 end
